@@ -48,7 +48,7 @@ def tables(x):
 
 
 #UI/UX
-st.set_page_config(layout = "wide")
+
 st.image("logo_image.jpg" , use_container_width = True)
 
 title = st.title("ADDRESS ORGANIZER")
@@ -64,4 +64,5 @@ if submit:
         st.write("Uploading Complete")
         st.success("PDF Created: Delivery Address.pdf")
     else:
+
         st.warning("Please upload your Excel file")
