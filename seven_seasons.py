@@ -1,6 +1,7 @@
 import streamlit as st 
 import pandas as pd
 from fpdf import FPDF
+import os
 
 #pdf construction
 def tables(x):
@@ -64,6 +65,31 @@ if submit:
         st.write("Uploading Complete")
         st.success("PDF Created: Delivery Address.pdf")
     else:
-
         st.warning("Please upload your Excel file")
+
+        #Download Button
+        pdf_path = "Delivery Address.pdf"
+        if os.path.exists(pdf_path):
+            with open(pdf_path, "rb") as files:
+                st.downnoad_button(label = ("Download"), data = files, file_name = pdf_path, mime = "application/pdf")
+        else:
+            st.warning("No File Detected....:(")
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
