@@ -55,7 +55,7 @@ st.image("logo_image.jpg" , use_container_width = True)
 title = st.title("ADDRESS ORGANIZER")
 
 with st.form(key = "Address"):
-    data = st.file_uploader("Select your Excel file")
+    data = st.file_uploader("Select your Excel file (Only provide .xlsx file)")
     submit = st.form_submit_button("Submit")
     
 if submit:
@@ -75,6 +75,7 @@ if submit:
 
     else:
         st.warning("Please upload your Excel file")
+
 
 
 
