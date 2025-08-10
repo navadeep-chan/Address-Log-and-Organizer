@@ -7,7 +7,7 @@ import os
 def tables(x):
     pdf = FPDF()
     pdf.add_page()
-    pdf.set_font ("Arial", "B", size = 16)
+    pdf.set_font ("Arial", "B", size = 14)
     
     left_x = 10
     right_x = pdf.w/2
@@ -75,6 +75,7 @@ if submit:
 
     else:
         st.warning("Please upload your Excel file")
+
 
 
 
