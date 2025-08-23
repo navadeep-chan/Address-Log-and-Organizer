@@ -13,9 +13,9 @@ def tables(x):
     
     left_x = 10
     right_x = pdf.w/2
-    y_start = 10
+    y_start = 5
     cell_hight = 9
-    multicell_per_column = 3
+    multicell_per_column = 4
     
     col = 0
     row_count = 0
@@ -77,6 +77,7 @@ if submit:
 
     else:
         st.warning("Please upload your Excel file")
+
 
 
 
