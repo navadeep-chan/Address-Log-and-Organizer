@@ -31,7 +31,7 @@ def tables(x):
                 row_count = 0
                 
         x_pose = left_x if col == 0 else right_x
-        y_pose = y_start + (row_count*70 +2)
+        y_pose = y_start + (row_count*70)
         pdf.set_xy(x_pose , y_pose)
             
             
@@ -77,6 +77,7 @@ if submit:
 
     else:
         st.warning("Please upload your Excel file")
+
 
 
 
