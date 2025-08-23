@@ -38,7 +38,7 @@ def tables(x):
         row = df.iloc[i].astype(str).str.strip()
         text_block = "\n".join(row.values)
 
-        pdf.multi_cell(width, cell_hight, text_block, align="L")
+        pdf.multi_cell(pdf.w/2, cell_hight, text_block, align="L")
 
         
         """row = df.iloc[i]
@@ -83,6 +83,7 @@ if submit:
 
     else:
         st.warning("Please upload your Excel file")
+
 
 
 
