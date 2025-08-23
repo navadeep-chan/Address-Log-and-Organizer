@@ -4,7 +4,7 @@ from fpdf import FPDF
 import os
 
 #pdf construction
-def tables(x):
+def tables(df):
     pdf = FPDF()
     pdf.add_page()
 
@@ -19,6 +19,8 @@ def tables(x):
     
     col = 0
     row_count = 0
+
+    df = df.applymap(lambda x: str(x).strip() if pd.notnull(x) else "")
     
     for i in range (len(df)):
         if row_count == multicell_per_column:
@@ -83,6 +85,7 @@ if submit:
 
     else:
         st.warning("Please upload your Excel file")
+
 
 
 
