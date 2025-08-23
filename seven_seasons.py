@@ -33,15 +33,21 @@ def tables(x):
         x_pose = left_x if col == 0 else right_x
         y_pose = y_start + (row_count*70)
         pdf.set_xy(x_pose , y_pose)
-            
-            
-        row = df.iloc[i]
+
+
+        row = df.iloc[i].astype(str).str.strip()
+        text_block = "\n".join(row.values)
+
+        pdf.multi_cell(width, cell_hight, text_block, align="L")
+
+        
+        """row = df.iloc[i]
         for j in row:
             width = pdf.w / 2
             pdf.multi_cell(width, cell_hight, str(j), align = "L")
             pdf.set_x(x_pose)
             
-        pdf.ln(2)   
+        pdf.ln(2)"""   
         row_count += 1
             
         
@@ -77,6 +83,7 @@ if submit:
 
     else:
         st.warning("Please upload your Excel file")
+
 
 
 
