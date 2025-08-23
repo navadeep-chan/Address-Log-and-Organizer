@@ -20,6 +20,8 @@ def tables(df):
     col = 0
     row_count = 0
 
+    df = df.dropna(axis=1, how="all")
+    df = df.dropna(axis=0, how="all")
     df = df.applymap(lambda x: str(x).strip() if pd.notnull(x) else "")
     
     for i in range (len(df)):
@@ -85,6 +87,7 @@ if submit:
 
     else:
         st.warning("Please upload your Excel file")
+
 
 
 
