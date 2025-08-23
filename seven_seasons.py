@@ -41,7 +41,7 @@ def tables(x):
             pdf.multi_cell(width, cell_hight, str(j), align = "L")
             pdf.set_x(x_pose)
             
-        pdf.ln(10)   
+        pdf.ln(2)   
         row_count += 1
             
         
@@ -77,6 +77,7 @@ if submit:
 
     else:
         st.warning("Please upload your Excel file")
+
 
 
 
