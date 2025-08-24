@@ -6,6 +6,7 @@ import os
 #pdf construction
 def tables(df):
     pdf = FPDF()
+    pdf.set_auto_page_break(auto=True, margin=3)
     pdf.add_page()
 
     pdf.add_font("DejaVu", "", "DejaVuSans.ttf", uni=True)
@@ -87,6 +88,7 @@ if submit:
 
     else:
         st.warning("Please upload your Excel file")
+
 
 
 
