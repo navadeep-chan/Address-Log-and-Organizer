@@ -23,7 +23,7 @@ def tables(df):
 
     df = df.dropna(axis=1, how="all")
     df = df.dropna(axis=0, how="all")
-    df = df.applymap(lambda x: str(x).strip() if pd.notnull(x) else "")
+    df = df.map(lambda x: str(x).strip() if pd.notnull(x) else "")
     
     for i in range (len(df)):
         if row_count == multicell_per_column:
