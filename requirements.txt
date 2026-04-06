@@ -1,4 +1,4 @@
 streamlit
 fpdf
 openpyxl
-pandas==1.5.3
+pandas
