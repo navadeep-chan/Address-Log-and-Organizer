@@ -48,7 +48,7 @@ def tables(df):
         
         row = df.iloc[i]
         for j in row:
-            width = pdf.w / 2
+            width = (pdf.w / 2) - 24
             pdf.multi_cell(width, cell_hight, str(j), align = "L")
             pdf.set_x(x_pose)
             
