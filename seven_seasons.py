@@ -13,7 +13,7 @@ def tables(df):
 
     font_path = os.path.join(BASE_DIR, "DejaVuSans.ttf")  # robust path
     pdf.add_font("DejaVu", style="", fname=font_path)      # fpdf2 syntax, no uni=True
-    pdf.set_font("DejaVu", size=14)
+    pdf.set_font("DejaVu", size=12)
 
     LEFT_X = 10
     RIGHT_X = pdf.w / 2
