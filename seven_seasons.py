@@ -58,7 +58,7 @@ with st.form(key="Address"):
     
 if submit:
     if data is not None:
-        df = pd.read_csv(data)  # ← changed
+        df = pd.read_csv(data, encoding="utf-8-sig")  # ← changed
         tables(df)
         st.write("Uploading Complete")
         st.success("PDF Created: Delivery Address.pdf")
