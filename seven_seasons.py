@@ -40,7 +40,7 @@ def tables(df):
     COLUMN_WIDTH = (pdf.w / 2) - 15
     
     Y_START = 10
-    BLOCK_HEIGHT = 92  # Fits 3 blocks comfortably within A4 height (297mm)
+    BLOCK_HEIGHT = 92 
     ROWS_PER_COLUMN = 3
     CELL_HEIGHT = 5.5
 
@@ -53,7 +53,6 @@ def tables(df):
     df = df.apply(lambda c: c.map(lambda x: str(x).strip() if pd.notnull(x) else ""))
 
     for i in range(len(df)):
-        # Page & Column wrap logic: 3 items per column, 2 columns per page
         if row_count == ROWS_PER_COLUMN:
             if col == 0:
                 col = 1
@@ -81,11 +80,12 @@ def tables(df):
 
         if barcode_value:
             try:
+                pdf.multi_cell(COLUMN_WIDTH, CELL_HEIGHT, str(barcode_value), align="L")
+                pdf.set_x(x_pos)
+
                 barcode_stream = generate_barcode_image(barcode_value)
                 
-                # Add a 2mm gap below the final line of text
-                barcode_y = pdf.get_y() + 2  
-                
+                barcode_y = pdf.get_y() + 1
                 barcode_w = 60
                 barcode_h = 15
                 
