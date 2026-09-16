@@ -79,20 +79,18 @@ def tables(df):
                 pdf.multi_cell(COLUMN_WIDTH, CELL_HEIGHT, str(val), align="L")
                 pdf.set_x(x_pos)
 
-        # Render Barcode at the bottom of the address block
         if barcode_value:
             try:
                 barcode_stream = generate_barcode_image(barcode_value)
-                # Keep ~20mm space at the base of each block for the barcode
-                barcode_y = y_pos + BLOCK_HEIGHT - 22
                 
-                # Standard medium dimensions for reliable scanner reading
+                # Add a 2mm gap below the final line of text
+                barcode_y = pdf.get_y() + 2  
+                
                 barcode_w = 60
-                barcode_h = 16
+                barcode_h = 15
                 
                 pdf.image(barcode_stream, x=x_pos, y=barcode_y, w=barcode_w, h=barcode_h)
             except Exception:
-                # In case of invalid characters or barcode generation errors
                 pass
 
         row_count += 1
