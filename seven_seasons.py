@@ -56,6 +56,7 @@ def tables(df):
 # UI/UX
 st.image(os.path.join(BASE_DIR, "logo_image.jpg"), use_container_width=True)
 st.title("ADDRESS ORGANIZER")
+st.subheader("With 8 Address Blocks")
 
 with st.form(key="Address"):
     data = st.file_uploader("Select your CSV file (Only provide .csv file)", type=["csv"])
